@@ -207,11 +207,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			for(LifeImage obj : life) {
 				//obj.paint(g);
 				
-		//draw the text for lives and score in the top right
+		//draw the text for lives, score, and restart in the top right
 			g.setColor(Color.RED);
 			g.drawString("Score: " + score, 8, 50);
 			g.drawString("Lives: " + lives, 80, 50);
-			
+			g.drawString("Press R to Restart", 475, 50);
 
 			}
 			
@@ -334,6 +334,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			System.out.println(ghost.getX());
 			System.out.println(ghost.getY());
 		}
+		if(arg0.getKeyCode() == 82) {
+			ghost.x = 275;
+			ghost.y = 675;
+			lives = 6;
+			score = 0;
+		}
+			
 		//move main character up
 		if(arg0.getKeyCode() == 87) {
 			ghost.move(0);
